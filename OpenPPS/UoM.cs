@@ -19,7 +19,7 @@ namespace OpenPPS
         public virtual Double Get()
         {
             return value;
-        }
+        } 
     }
 
     // Давление
