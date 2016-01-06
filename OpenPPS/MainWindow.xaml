@@ -7,9 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="90,122,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="69,64,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="119"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="254,26,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="224" Width="186"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="255" Margin="0,39,0,0" VerticalAlignment="Top" Width="517">
+            <TabItem Header="Тест1">
+                <Grid Background="#FFE5E5E5" Height="223" VerticalAlignment="Top">
+                    <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="22,74,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="34" Margin="22,19,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="119"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="274,10,0,0" TextWrapping="Wrap" Text="TextBlock" Width="186"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Тест2">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="button1" Content="Гидравлический расчет" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="187" Click="button1_Click"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

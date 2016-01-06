@@ -39,5 +39,14 @@ namespace OpenPPS
                 + pr.Get_kgs_m2() + " кгс/м2\n"
                 ;
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem newTab = new TabItem();
+            newTab.Header = "Гидро";
+            SimpleGidro newContent = new SimpleGidro();
+            newTab.Content = newContent;
+            tabControl.Items.Add(newTab);
+        }
     }
 }

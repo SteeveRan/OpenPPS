@@ -1,0 +1,139 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OpenPPS"
+             xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="OpenPPS.SimpleGidro"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="410" MinWidth="410">
+    <UserControl.Resources>
+
+        <!--Стиль для надписей-->
+        <Style x:Key="LableStyle" TargetType="Label">
+            <Setter Property="MaxHeight"  Value="20"/>
+            <Setter Property="MaxWidth" Value="150"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Padding" Value="2,0,2,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="MaxHeight" Value="20"/>
+            <Setter Property="MaxWidth" Value="150"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Padding" Value="2,0,2,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid Background="White" Width="auto">
+        <ScrollViewer>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <!--Первая шапка-->
+                <Grid Grid.Row="0">
+                    <Label x:Name="label_Copy"  Grid.Row="0"
+                            Content="Исходные данные" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <!--Данные-->
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="26"/>
+                    </Grid.RowDefinitions>
+                            
+
+                    <Label Grid.Column="0" Grid.Row="0" x:Name="Pressure" Content="Давление в начале" Style="{DynamicResource LableStyle}"/>
+                    <TextBox Grid.Column="2" Grid.Row="0" x:Name="textBox_Pressure" Style="{DynamicResource TextBoxStyle}"/>
+                    <local:UnitsCombo x:Name="Units_Pressure" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <Label x:Name="Flowrate" Grid.Column="0" Grid.Row="1" Content="Объемный расход" Style="{DynamicResource LableStyle}"/>
+                    <TextBox x:Name="textBox_Flowrate" Grid.Column="2" Grid.Row="1" Style="{DynamicResource TextBoxStyle}"/>
+                    <local:UnitsCombo x:Name="Units_Flowrate" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <Label x:Name="Diameter" Grid.Column="0" Grid.Row="2" Content="Диаметр" Style="{DynamicResource LableStyle}"/>
+                    <TextBox x:Name="textBox_Diameter" Grid.Column="2" Grid.Row="2" Style="{DynamicResource TextBoxStyle}"/>
+                    <local:UnitsCombo x:Name="Units_Diameter" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <Label x:Name="Thickness" Grid.Column="0" Grid.Row="3" Content="Толщина стенки" Style="{DynamicResource LableStyle}"/>
+                    <TextBox x:Name="textBox_Thickness" Grid.Column="2" Grid.Row="3" Style="{DynamicResource TextBoxStyle}"/>
+                    <local:UnitsCombo x:Name="Units_Thickness" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+                    <Label x:Name="Length" Grid.Column="0" Grid.Row="4" Content="Длина" Style="{DynamicResource LableStyle}"/>
+                    <TextBox x:Name="textBox_Length" Grid.Column="2" Grid.Row="4" Style="{DynamicResource TextBoxStyle}"/>
+                    <local:UnitsCombo x:Name="Units_Length" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" test="density"/>
+
+                </Grid>
+
+                <!--Вторая шапка-->
+                <!--Свойства жидкости-->
+
+                <Label x:Name="label_Copy2" Grid.Row="2"
+                        Content="Свойства жидкости" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120"/>
+
+                <!--Данные-->
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="5"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26"/>
+                        <RowDefinition Height="26"/>
+                    </Grid.RowDefinitions>
+                    <!--Плотность-->
+                    <Label x:Name="Density" Grid.Column="0" Grid.Row="0"
+                            Content="Плотность" Style="{DynamicResource LableStyle}"/>
+                    <TextBox x:Name="TB_density" Grid.Column="2" Grid.Row="0"
+                                TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20"  Width="150"/>
+                    <local:UnitsCombo x:Name="Units_Density" Grid.Column="4" Grid.Row="0"
+                                        HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <!--Вязкость-->
+                    <ComboBox x:Name="Viscosity" Grid.Column="0" Grid.Row="1"
+                                HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" SelectedIndex="0" FontSize="10">
+                        <System:String>Кинематическая вязкость</System:String>
+                        <System:String>Динамическая вязкость</System:String>
+                    </ComboBox>
+                    <TextBox x:Name="TB_visc" Grid.Column="2" Grid.Row="2"
+                                TextWrapping="Wrap" Text="" HorizontalAlignment="Left" VerticalAlignment="Center" Height="20"  Width="150"/>
+                    <local:UnitsCombo x:Name="Units_Viscosity" Grid.Column="4" Grid.Row="2"
+                                HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+
+
+    </Grid>
+</UserControl>

@@ -6,6 +6,25 @@ using System.Threading.Tasks;
 
 namespace OpenPPS
 {
+    public enum Units : int
+    {
+        pressure,
+        dynamic_viscosity,
+        kinematic_viscosity,
+        flowrate,
+        length,
+        square,
+        volume,
+        time,
+        velocity,
+        acceleration,
+        mass,
+        density,
+        force,
+        temperature,
+        energy
+    };
+
     class UoM
     {
         // Базовый класс всех едениц измерений
@@ -22,6 +41,8 @@ namespace OpenPPS
         } 
     }
 
+    //Гидромеханика
+    
     // Давление
     class Units_Pressure : UoM
     {
@@ -84,60 +105,92 @@ namespace OpenPPS
         }
 
     }
-
-    class Units_Length : UoM
-    {
-
-    }
-
-    class Units_Mass : UoM
-    {
-
-    }
-
-    class Units_Temperature : UoM
-    {
-
-    }
-
+    // Динамическая вязкость
     class Units_DinamicViscosity : UoM
     {
 
     }
-
+    // Кинематическая вязкость
     class Units_KinematicViscositi : UoM
     {
 
     }
-    class Units_Density : UoM
+    // Расход
+    class Units_Flowrate : UoM
     {
 
     }
 
-    class Units_Velocity : UoM
+    // Геометрия
+    // Длина
+    class Units_Length : UoM
+    {
+
+    }
+    // Площадь
+    class Units_Square : UoM
+    {
+
+    }    
+    // Объем
+    class Units_Volume : UoM
     {
 
     }
 
+    //Механика
+
+    // Время
     class Units_Time : UoM
     {
 
     }
+    // Скорость
+    class Units_Velocity : UoM
+    {
 
+    }
+    // Ускорение
+    class Units_Acceleration : UoM
+    {
+
+    }
+    // Масса
+    class Units_Mass : UoM
+    {
+
+    }
+    // Плотность
+    class Units_Density : UoM
+    {
+
+    }
+    // Сила
     class Units_Force : UoM
     {
 
     }
 
+    //Термодинамика
+
+    // Температура
+    class Units_Temperature : UoM
+    {
+
+    } 
+    
+
+
+
+
+
+    // Энергия
     class Units_Energy : UoM
     {
 
     }
 
-    //class Units_Temperature : UoM
-    //{
 
-    //}
     //class Units_Temperature : UoM
     //{
 
